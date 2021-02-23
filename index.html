@@ -10,7 +10,6 @@
 </head>
 <body>
     <div class="myWallet">
-
 <div class="firstPanel">
 <div class="header">
     <h1 class="header__title">MY WALLET</h1>
@@ -65,6 +64,11 @@
 </g>
 </svg>
     <div class="sourceIcon">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div class="total__money">
+        <i class="fas fa-dollar-sign"></i>
+        <h3>TOTAL:</h3>
+        <p class="total__money_amount">0<span class="rate"> zł</span></p>
+    </div>   
 </div>
 <div class="list">
     <div class="list__income">
@@ -91,32 +95,33 @@
 </div>
 
 <div class="secondPanel">
-
 <div class="total">
 <div class="total__income">
     <h3>INCOME</h3>
     <i class="fas fa-money-bill-wave"></i>
-    <p class="total__income_amout">0<span class="rate"> zł</span></p>
+    <p class="total__income_amount">0<span class="rate"> zł</span></p>
 </div>
 <div class="total__expense">
     <h3>EXPENSE</h3>
     <i class="fas fa-credit-card"></i>
-    <p class="total__expense_amout">0<span class="rate"> zł</span></p>
+    <p class="total__expense_amount">0<span class="rate"> zł</span></p>
 </div>
 </div>
 <div class="forms">
 <form class="income__form">
     <h4>Enter your income</h4>
+    <p>Title:</p>
+    <input class="income__name" type="text">
     <p>Amout:</p>
-    <input type="number">
+    <input class="incomeAmount" type="number">
     <button type="submit" id="income__btn">CALCULATE</button>
 </form>
 <form class=expense__form">
     <h4>Enter your expense</h4>
     <p>Title:</p>
-    <input type="text">
+    <input class="expense__name" type="text">
     <p>Amout:</p>
-    <input type="number">
+    <input class="expenseAmount" type="number">
     <button type="submit" id="expense__btn">CALCULATE</button>
 </form>
 <button id="close">CLOSE</button>
