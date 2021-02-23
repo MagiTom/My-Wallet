@@ -1,0 +1,262 @@
+:root {
+  --fontColormain: rgba(83, 83, 83, 1);
+  --fontColorGreen: rgb(94, 214, 156);
+  --fontColorRed: #ff665e;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.myWallet {
+  display: flex;
+}
+
+.firstPanel {
+  width: 65%;
+}
+
+.header {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FAACA8;
+background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+
+}
+
+.header__title {
+  text-align: center;
+  color: var(--fontColormain);
+}
+
+.header svg {
+  fill: var(--fontColormain);
+}
+
+.sourceIcon {
+  margin-top: 1em;
+  font-size: 0.3rem;
+}
+
+.list {
+  height: inherit;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.list > *,
+.list {
+  margin-top: 1em;
+}
+
+.list__income,
+.list__expense {
+  height: 10em;
+  width: 40%;
+  padding: 2em;
+  border: 1px solid silver;
+}
+.list__income_title {
+  color: var(--fontColorGreen);
+}
+.list__expense_title {
+  color: var(--fontColorRed);
+}
+
+.item {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid silver;
+}
+
+.item:last-child {
+  margin-bottom: 1em;
+}
+
+.info {
+  display: flex;
+}
+
+.info > * {
+  margin-left: 0.5rem;
+}
+
+.delete {
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.secondPanel {
+  width: 35%;
+  padding: 2em;
+  background-color:#f8f6ff;
+}
+
+.secondPanel > * {
+  margin-top: 1em;
+}
+
+.total {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.total__income h3 {
+  color: var(--fontColorGreen);
+}
+
+.total__expense h3 {
+  color: var(--fontColorRed);
+}
+
+.total__income > *,
+.total__expense > * {
+  margin-top: 0.5em;
+}
+
+.total__income i,
+.total__expense i {
+  font-size: 2rem;
+  color: var(--fontColormain);
+}
+
+.total__income_amout,
+.total__expense_amout {
+  font-size: 1.5rem;
+}
+
+.total__income_amout {
+  color: var(--fontColorGreen);
+}
+
+.total__expense_amout {
+  color: var(--fontColorRed);
+}
+
+.forms > * {
+  margin-top: 2em;
+  border: 1px solid silver;
+  padding: 1em 2em;
+}
+
+form > * {
+  margin-top: 0.5rem;
+}
+
+.forms button {
+  margin-bottom: 0.5rem;
+}
+
+.forms input {
+    width: 100%;
+  border: none;
+  height: 1.5rem;
+}
+
+#income__btn,
+#expense__btn {
+  padding: 0.5em 1em;
+  color: var(--fontColorGreen);
+  border: 1px solid var(--fontColorGreen);
+  background: none;
+}
+
+#income__btn:hover,
+#expense__btn:hover {
+  background-color: var(--fontColorGreen);
+  color: white;
+  transition: all 0.3s;
+}
+
+#expense__btn {
+  color: var(--fontColorRed);
+  border: 1px solid var(--fontColorRed);
+}
+
+#expense__btn:hover {
+  background-color: var(--fontColorRed);
+}
+
+#close {
+  visibility: hidden;
+}
+
+@media (max-width: 820px) {
+  .myWallet {
+    flex-direction: column;
+  }
+
+  .header {
+    padding: 2em;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .header__title {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .sourceIcon {
+    visibility: hidden;
+  }
+
+  .header svg {
+    width: 9%;
+    height: 9%;
+    position: absolute;
+    right: 0;
+    margin-right: 2em;
+  }
+
+  .firstPanel {
+    width: 100%;
+  }
+  .list__income,
+  .list__expense {
+    width: 100%;
+    margin: 1em;
+  }
+
+  .secondPanel {
+    position: absolute;
+    width: 100%;
+    visibility: hidden;
+  }
+
+  .forms {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #close {
+    width: 50%;
+    margin: 2em auto;
+  }
+
+  #close:hover {
+    background-color: silver;
+    color: white;
+  }
+}
+
+@media (max-width: 576px) {
+  .list {
+    margin: 1em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
