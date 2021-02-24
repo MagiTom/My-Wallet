@@ -14,7 +14,6 @@ class UI{
         this.moneyArr = [0];
     }
 
-
 clearInput(){
     this.incomeName.value = '';
     this.expenseName.value = '';
@@ -51,6 +50,7 @@ addExpense(){
     } else {
         const expense = document.createElement('div');
         expense.classList.add('item');
+        expense.setAttribute('id', this.ID);
         expense.innerHTML = `<p class="item__name">${this.expenseName.value}</p>
         <div class="info">
         <p class="item__amout">${-this.expenseAmount.value}</p><span class="item__rate">zł</span>
@@ -74,7 +74,22 @@ this.total.textContent = `${totalMoney}`;
 this.totalIncome.textContent = `${totalIncome}`;
 this.totalExpense.textContent = `${totalExp}`;
 }
+
+
 }
+
+const ui = new UI();
+
+function deleteTransatcion(id){
+    const transactionToDelete = document.getElementById(id);
+    const transactionAmount = parseFloat(transactionToDelete.childNodes[2].firstElementChild.innerText);
+    const indexOfTransaction = ui.moneyArr.indexOf(transactionAmount);
+    
+    ui.moneyArr.splice(indexOfTransaction, 1);
+    transactionAmount > 0 ? ui.incomeList.removeChild(transactionToDelete) : ui.expenseList.removeChild(transactionToDelete);
+    ui.countMoney(ui.moneyArr);
+    }
+
 
 function eventListeners(){
  const iconWallet = document.querySelector('.header svg');
@@ -83,7 +98,7 @@ function eventListeners(){
  const close = document.getElementById('close');
  const secondPanel = document.querySelector('.secondPanel');
 
- const ui = new UI();
+
 
  iconWallet.addEventListener('click', (e)=>{
      e.preventDefault();
